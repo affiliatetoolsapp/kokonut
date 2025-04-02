@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils"
 import { ArrowRight, CheckCircle, Clock, XCircle } from "lucide-react"
-import Image from "next/image"
 
 interface Application {
   id: string
@@ -102,8 +101,8 @@ export default function RecentApplications({ applications = APPLICATIONS, classN
                 "transition-all duration-200",
               )}
             >
-              <Image
-                src={application.affiliateAvatar || "/placeholder.svg"}
+              <img
+                src={application.affiliateAvatar}
                 alt={application.affiliateName}
                 width={40}
                 height={40}

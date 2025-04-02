@@ -16,9 +16,15 @@ import {
   UserPlus,
   FileText,
   DollarSign,
+  LayoutDashboard,
+  Store,
+  Users,
+  LineChart,
+  ClipboardList,
+  Link2,
 } from "lucide-react"
 
-import Link from "next/link"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 
 export default function Sidebar() {
@@ -39,7 +45,7 @@ export default function Sidebar() {
   }) {
     return (
       <Link
-        href={href}
+        to={href}
         onClick={handleNavigation}
         className="flex items-center px-3 py-2 text-sm rounded-md transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#1F1F23]"
       >
@@ -67,7 +73,7 @@ export default function Sidebar() {
       >
         <div className="h-full flex flex-col">
           <Link
-            href="/dashboard"
+            to="/dashboard"
             className="h-16 px-6 flex items-center border-b border-gray-200 dark:border-[#1F1F23]"
           >
             <div className="flex items-center gap-3">

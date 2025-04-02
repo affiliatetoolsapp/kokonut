@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
 import { Calendar, Clock, Copy, ExternalLink, Globe, LinkIcon, Shield, Tag, Target, User } from "lucide-react"
-import Image from "next/image"
+import { DialogFooter } from "@/components/ui/dialog"
+import { Separator } from "@/components/ui/separator"
 
 interface Offer {
   id: string
@@ -47,11 +48,9 @@ export default function OfferDetails({ offer }: OfferDetailsProps) {
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/3">
           <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-[#1F1F23]">
-            <Image
+            <img
               src={offer.imageUrl || "/placeholder.svg"}
               alt={offer.title}
-              width={300}
-              height={200}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -262,11 +261,9 @@ export default function OfferDetails({ offer }: OfferDetailsProps) {
                 </Button>
               </div>
               <div className="p-4 flex items-center justify-center">
-                <Image
+                <img
                   src="/placeholder.svg?height=250&width=300"
                   alt="Banner 300x250"
-                  width={300}
-                  height={250}
                   className="border"
                 />
               </div>
@@ -281,11 +278,9 @@ export default function OfferDetails({ offer }: OfferDetailsProps) {
                 </Button>
               </div>
               <div className="p-4 flex items-center justify-center">
-                <Image
+                <img
                   src="/placeholder.svg?height=90&width=728"
                   alt="Banner 728x90"
-                  width={728}
-                  height={90}
                   className="border"
                 />
               </div>
@@ -309,6 +304,11 @@ export default function OfferDetails({ offer }: OfferDetailsProps) {
           </div>
         </TabsContent>
       </Tabs>
+      <Separator />
+      <DialogFooter>
+        <Button variant="outline">Cancel</Button>
+        <Button>Apply Now</Button>
+      </DialogFooter>
     </div>
   )
 }

@@ -14,7 +14,7 @@ import { ArrowLeft, ArrowRight, Check, Globe, ImagePlus, Info, Loader2, Save, Ta
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { useRouter } from "next/navigation"
+import { useNavigate } from "react-router-dom"
 
 const payoutTypes = [
   { id: "cpa", name: "CPA (Cost Per Action)", description: "Pay per completed action (sale, signup, etc.)" },
@@ -69,7 +69,7 @@ const trafficSources = [
 ]
 
 export default function CreateOffer() {
-  const router = useRouter()
+  const navigate = useNavigate()
   const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
@@ -115,7 +115,7 @@ export default function CreateOffer() {
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
     // Redirect to offers page
-    router.push("/dashboard/offers")
+    navigate("/dashboard/offers")
   }
 
   const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 4))

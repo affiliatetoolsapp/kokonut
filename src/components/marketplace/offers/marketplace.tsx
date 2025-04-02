@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -9,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowUpDown, Filter, MoreHorizontal, Search, Plus, Eye, LinkIcon, Copy } from "lucide-react"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import { Link } from "react-router-dom"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import OfferDetails from "./offer-details"
 
@@ -241,7 +239,7 @@ export default function OffersMarketplace() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Offer Marketplace</h1>
-        <Link href="/dashboard/offers/create">
+        <Link to="/dashboard/offers/create">
           <Button className="flex items-center gap-2">
             <Plus className="h-4 w-4" />
             Create Offer
